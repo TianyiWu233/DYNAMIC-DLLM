@@ -1,0 +1,24 @@
+tag:
+  - code_generation
+task: humaneval_local
+dataset_path: openai/openai_humaneval
+dataset_name: openai_humaneval
+output_type: generate_until
+test_split: test
+doc_to_text: "{{prompt}}"
+doc_to_target: "{{canonical_solution}}"
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+generation_kwargs:
+  until:
+    - "\nclass"
+    - "\ndef"
+    - "\nif"
+    - "\nprint"
+    - "\n#"
+  do_sample: false
+repeats: 1
+metadata:
+  version: 1.0
