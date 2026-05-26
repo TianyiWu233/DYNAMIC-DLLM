@@ -8,7 +8,7 @@ This repository is the official PyTorch implementation of [Dynamic-dLLM](https:/
 
 (a-b) Layer input similarity and attention output similarity across adjacent denoising steps. Brighter regions indicate higher similarity — most tokens are stable across steps. (c-d) The number of tokens requiring updates varies across steps and layers, motivating layer-specific cache budgets. (e) Existing parallel decoding methods may discard valid candidates due to fixed thresholds.
 
-![Illustration of Dynamic-dLLM](assets/framework.png)
+![Illustration of Dynamic-dLLM](assets/frame_work.jpg)
 
 Dynamic-dLLM consists of two components: **Dynamic Cache Updating (DCU)** reallocates the cache update budget per-layer at each denoising step, and **Adaptive Parallel Decoding (APD)** dynamically adjusts decoding thresholds for all tokens.
 
